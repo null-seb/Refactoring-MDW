@@ -6,8 +6,8 @@ public class RegularMovie extends Movie {
 	private static final double EXTRA_CHARGE = 1.5;
 	private static final int DAYS_RENTED_THRESHOLD = 2;
 
-	public RegularMovie(String title ,Price price){
-		super(title,price);
+	public RegularMovie(String title ){
+		super(title);
 	}
 	@Override
 	public double getCharge(int daysRented) {
