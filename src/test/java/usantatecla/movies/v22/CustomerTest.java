@@ -55,8 +55,8 @@ public class CustomerTest {
 	}
 	@Test
 	public void totalFrequentRenterPointsForNewReleaseMovieOneDayTest() {
-		Movie childrenMovie = new ChildrenMovie(MOVIE_NAME);
-		Rental rental = new RentalBuilder().movie(childrenMovie).daysRented(1).build();
+		Movie newReleaseMovie = new NewReleaseMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(newReleaseMovie).daysRented(1).build();
 		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
 		assertEquals(1,customer.getTotalFrequentRenterPoints());
 	}
@@ -73,6 +73,100 @@ public class CustomerTest {
 		Rental rental = new RentalBuilder().movie(regularMovie).daysRented(1).build();
 		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
 		assertEquals("customerName", customer.getName());
+	}
+
+	@Test
+	public void totalFrequentRenterPointsForRegularMovieTwoDayTest() {
+		Movie regularMovie = new RegularMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(regularMovie).daysRented(2).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(1,customer.getTotalFrequentRenterPoints());
+	}
+
+
+	@Test
+	public void totalChargeForRegularMovieTwoDayTest() {
+		Movie regularMovie = new RegularMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(regularMovie).daysRented(2).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 2.0);
+	}
+
+
+	@Test
+	public void totalFrequentRenterPointsForChildrenMovieTwoDayTest() {
+		Movie childrenMovie = new ChildrenMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(childrenMovie).daysRented(2).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(1,customer.getTotalFrequentRenterPoints());
+	}
+	@Test
+	public void totalChargeForChildrenMovieTwoDayTest() {
+		Movie childrenMovie = new ChildrenMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(childrenMovie).daysRented(2).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 1.5);
+	}
+	@Test
+	public void totalFrequentRenterPointsForNewReleaseMovieTwoDayTest() {
+		Movie newReleaseMovie = new NewReleaseMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(newReleaseMovie).daysRented(2).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(2,customer.getTotalFrequentRenterPoints());
+	}
+	@Test
+	public void totalChargeForNewReleaseTwoDayTest() {
+		Movie newReleaseMovie = new NewReleaseMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(newReleaseMovie).daysRented(1).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 3.0);
+	}
+
+	@Test
+	public void totalFrequentRenterPointsForRegularMovieThreeDayTest() {
+		Movie regularMovie = new RegularMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(regularMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(1,customer.getTotalFrequentRenterPoints());
+	}
+
+
+	@Test
+	public void totalChargeForRegularMovieThreeDayTest() {
+		Movie regularMovie = new RegularMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(regularMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 3.5);
+	}
+
+
+	@Test
+	public void totalFrequentRenterPointsForChildrenMovieThreeDayTest() {
+		Movie childrenMovie = new ChildrenMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(childrenMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(1,customer.getTotalFrequentRenterPoints());
+	}
+	@Test
+	public void totalChargeForChildrenMovieThreeDayTest() {
+		Movie childrenMovie = new ChildrenMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(childrenMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 1.5);
+	}
+	@Test
+	public void totalFrequentRenterPointsForNewReleaseMovieThreeDayTest() {
+		Movie newReleaseMovie = new NewReleaseMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(newReleaseMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertEquals(2,customer.getTotalFrequentRenterPoints());
+	}
+	@Test
+	public void totalChargeForNewReleaseThreeDayTest() {
+		Movie newReleaseMovie = new NewReleaseMovie(MOVIE_NAME);
+		Rental rental = new RentalBuilder().movie(newReleaseMovie).daysRented(3).build();
+		Customer customer = new CustomerBuilder().name(CUSTOMER_NAME).rental(rental).build();
+		assertTrue(customer.getTotalCharge() == 3.0);
 	}
 
 	@Test
