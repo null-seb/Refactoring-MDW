@@ -16,7 +16,7 @@ public abstract class Movie {
 		return Movie.FREQUENT_RENTER_POINTS;
 	}
 
-	public String getTitle() {
+	public  String getTitle() {
 		return title;
 	}
 	

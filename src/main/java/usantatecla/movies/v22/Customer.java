@@ -35,11 +35,11 @@ public class Customer {
 		return result;
 	}
 
-	private double getTotalCharge() {
+	public double getTotalCharge() {
 		return this.rentals.stream().mapToDouble(rental->rental.getCharge()).sum();
 	}
-	
-	private int getTotalFrequentRenterPoints() {
+
+	public int getTotalFrequentRenterPoints() {
 		return this.rentals.stream().mapToInt(rental->rental.getFrequentRenterPoints()).sum();
 	}
 
